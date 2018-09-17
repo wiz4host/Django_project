@@ -1,0 +1,63 @@
+<!doctype html>
+<title>Example</title>
+<style>
+  * {
+   box-sizing: border-box; 
+  }
+  body {
+    margin: 0;
+  }
+  #main {
+    display: flex;
+    min-height: calc(100vh - 40vh);
+  }
+  #main > article {
+    flex: 1;
+  }
+  #main > nav, 
+  #main > aside {
+    flex: 0 0 20vw;
+    background: beige;
+  }
+  #main > nav {
+    order: -1;
+  }
+  header, footer, article, nav, aside, menu {
+    padding: 1em;
+  }
+  header, footer {
+    background: yellowgreen;
+    height: 20vh;
+  }
+</style>
+<body>
+  <header>
+      <tr>
+          <td>
+              <div align="center">
+                  <h1>Django Project</h1>
+              </div>
+          </td>
+
+          <td>
+            <div align="right">
+               Login: {{ request.user }}
+            </div>
+          </td>
+      </tr>
+  </header>
+  <div id="main">
+
+      {% include "navbar.html" %}
+
+
+      {% block content %}
+             <article>Article</article>
+      {%  endblock %}
+
+
+
+  <aside>Aside</aside>
+  </div>
+  <footer>Footer</footer>
+</body>
