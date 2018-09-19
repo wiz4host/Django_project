@@ -1,0 +1,15 @@
+{%extends 'base.html' %}
+{% block content %}
+    <article>
+        <h1>DATA_BASE_DETAILS:</h1>
+        <p>Title: {{ object.title }}</p>
+        <p>Price: {{ object.price }}</p>
+        <p>{% if object.summary == None %}
+               {{ object.summary }}
+            {% else %}
+                Description Coming Soon
+            {% endif %}
+        </p>
+
+    </article>
+{% endblock %}

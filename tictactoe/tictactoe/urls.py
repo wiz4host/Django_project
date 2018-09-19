@@ -18,7 +18,7 @@ from django.urls import path
 
 from .views import welcome
 from .views import home_view, contact_view, about_view, social_view
-from product.views import  product_detail_view
+from  product.views import  product_detail_view, product_create_view
 
 
 urlpatterns = [
@@ -29,4 +29,5 @@ urlpatterns = [
     path('about', about_view, name='about'),
     path('social', social_view, name='social'),
     path('product', product_detail_view, name='product'),
+    path('create', product_create_view, name='create')
 ]

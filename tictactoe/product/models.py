@@ -4,8 +4,8 @@ from django.db import models
 class Product(models.Model):
     title = models.CharField(max_length=200)  #https://docs.djangoproject.com/en/2.1/ref/models/fields/#charfield
     description = models.TextField(blank=True, null=True)
-    price = models.DecimalField(decimal_places=2, max_digits=5)
+    price = models.DecimalField(decimal_places=2, max_digits=5, blank=True, null=True)
     summary = models.TextField(default='This is cool')
-    featured = models.BooleanField()
+    featured = models.BooleanField(default=True)
 
 
